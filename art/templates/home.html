@@ -1,0 +1,15 @@
+
+{% block content %}
+
+    <form action="{% url 'upload_pic' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+        <p>
+            <input id="id_image" type="file" class="" name="image">
+        </p>
+        <p>
+            <label for="id_title">Enter a name form this image</label><input id="id_title" type="text" class="" name="title">
+        </p>
+        <input type="submit" value="Submit" />
+    </form>
+
+
+{% endblock %}

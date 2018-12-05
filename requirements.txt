@@ -1,0 +1,9 @@
+Django
+django-cors-headers==2.2.0
+djangorestframework==3.7.7
+pygsheets
+requests
+numpy
+Pillow  # provides PIL
+scipy
+tensorflow-gpu >= 1.0  # installs tensorflow with GPU support, should still work even without GPU

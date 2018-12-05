@@ -1,0 +1,28 @@
+
+{% block content %}
+    {% load static %}
+
+    {% if message %}
+        {{ message }}
+    {%  endif %}
+    {% if images %}
+        {% for image in images %}
+          <p>
+              {{ image }}
+            <img src="{{ MEDIA_URL }}{{ image.file.url }}"/>
+          </p>
+        {% endfor %}
+    {%  endif %}
+    <form action="{% url 'upload_pic' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+        <p>
+            <input id="id_image" type="file" class="" name="image" required>
+        </p>
+        <p>
+            <label for="title">Enter a name for this image</label>
+            <input id="title" type="text" name="title" maxlength="100" required>
+        </p>
+        <input type="submit" value="Submit" />
+    </form>
+
+
+{% endblock %}
